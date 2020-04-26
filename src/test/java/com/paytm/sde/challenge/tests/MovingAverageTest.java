@@ -19,12 +19,14 @@ public class MovingAverageTest {
     private final int averageSize = 3; 
     private static final double DELTA = 1e-15;
 
-
+    
     @Before
     public void init() {
         movingAverage = new MovingAverageImpl(averageSize);
     }
+    
 
+    /*** Validates if the function only returns the first element added with one element in data structure */
     @Test
     public void addElementOneTest() {
 
@@ -33,6 +35,7 @@ public class MovingAverageTest {
         assertEquals(10d, movingAverage.getIndexedElement(0), DELTA);
     }
 
+    /*** Validates if the function returns the first element added in the data structure */
     @Test
     public void addElementFirstTest() {
         movingAverage.addElement(2.1d);
@@ -43,6 +46,7 @@ public class MovingAverageTest {
         assertEquals(2.1d, movingAverage.getIndexedElement(0), DELTA);
     }
 
+    /*** Checks if the proper error scenario is triggered if the requested index is not in data structure */
     @Test
     public void getIndexedElementEmptyListTest() {
         try {
@@ -55,6 +59,7 @@ public class MovingAverageTest {
 
     }
 
+    /*** Validates if all elements of data structure is returned */
     @Test
     public void getAllIndexedElementIndexTest() {
 
@@ -68,11 +73,13 @@ public class MovingAverageTest {
 
     }
 
+    /*** Checks if the average returned is 0 if the list is empty */
     @Test
     public void getMovingAverageEmptyList() {
         assertEquals(0d, movingAverage.getAverage(), DELTA);
     }
 
+    /*** Validates the moving average when the requested N element size is more than size of data structure */
     @Test
     public void getMovingAverageSizeLessThanN() {
         movingAverage.addElement(2.1d);
@@ -81,7 +88,9 @@ public class MovingAverageTest {
         //It will take average of two elements as currently we don't have 3 elements in the list (3 is Nth average size)
         assertEquals(2d, movingAverage.getAverage(), DELTA);
     }
-
+    
+    
+    /*** Validates the moving average when the requested N element size is equal to the size of data structure */
     @Test
     public void getMovingAverageSizeEqualsN_3() {
         movingAverage.addElement(3.5d);
@@ -91,6 +100,7 @@ public class MovingAverageTest {
     }
 
 
+    /*** Validates the moving average when the requested N element size is less than size of data structure */
     @Test
     public void getMovingAverageSizeGreaterThanN() {
         movingAverage.addElement(2.16d);

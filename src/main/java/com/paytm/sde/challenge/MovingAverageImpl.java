@@ -7,8 +7,8 @@ public class MovingAverageImpl implements MovingAverage{
 
 	private Queue<Double> queue; //This is used for getting moving average
     private double sum; //Assuming data will not exceed Double.MAX_VALUE
-    private int averageSize; //Nth element for the average
-    private LinkedList<Double> dataCollection; //This is used to track all elements
+    private int averageSize; //Requested N elements for average size.
+    private LinkedList<Double> dataCollection; //This is used to track and get all elements
  
     public MovingAverageImpl(int averageSize) {
         queue = new LinkedList<Double>();

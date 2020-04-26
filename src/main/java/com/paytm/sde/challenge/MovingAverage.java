@@ -5,7 +5,8 @@ import java.util.LinkedList;
 public interface MovingAverage {
 
 	/**
-	 * Returns the average of last n elements. 
+	 * Returns the average of last n elements. If average size is more than number of elements in data structure, then average of 2 elements is returned.
+	 * Returns 0 is data set is empty. 
 	 * @param numberOfItems
 	 * @return average
 	 */
@@ -13,7 +14,7 @@ public interface MovingAverage {
 
 
 	/**
-	 * Adds an element to the data structure
+	 * Adds an element to the data structure. FIFO is used to calculate sum and linkedList to store all elements
 	 * @param element
 	 */
 	void addElement(double data);
