@@ -70,7 +70,7 @@ public class MovingAverageTest {
 
     @Test
     public void getMovingAverageEmptyList() {
-        assertEquals(0f, movingAverage.getAverage(), DELTA);
+        assertEquals(0d, movingAverage.getAverage(), DELTA);
     }
 
     @Test

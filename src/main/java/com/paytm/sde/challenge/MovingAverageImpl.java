@@ -30,7 +30,7 @@ public class MovingAverageImpl implements MovingAverage{
     public double getAverage() {
     	int size = dataCollection.size();
     	if(size<=0) {
-    		return 0f;
+    		return 0d;
     	}
     	if(size<=averageSize) {
     		return sum / size;

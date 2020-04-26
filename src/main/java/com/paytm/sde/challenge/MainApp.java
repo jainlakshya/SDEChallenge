@@ -19,11 +19,11 @@ public class MainApp {
 	        System.out.println(movingAverage.getAverage());
 	        movingAverage.addElement(9);
 	        System.out.println(movingAverage.getAverage());
-	        movingAverage.addElement(1.5f);
+	        movingAverage.addElement(1.5d);
 	        System.out.println(movingAverage.getAverage());
-	        movingAverage.addElement(7.5f);
+	        movingAverage.addElement(7.5d);
 	        System.out.println(movingAverage.getAverage());
-	        movingAverage.addElement(5.5f);
+	        movingAverage.addElement(5.5d);
 	        System.out.println(movingAverage.getAverage());
 	 
 
